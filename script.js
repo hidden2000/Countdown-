@@ -5,7 +5,7 @@ const minsEl = document.getElementById("mins");
 const secondsEl = document.getElementById("seconds");
 
 
-var newYears = prompt("Enter the countdown date");
+var newYears ;
 
 
 function countdown(){
@@ -30,8 +30,16 @@ function countdown(){
   function formatTime(time) {
     return time < 10 ? `0${time}` : time;
 }
-
-
+document.querySelector(".search button").addEventListener("click", function () {
+  newYears=document.querySelector(".search-bar").value;
+  
+});
+document.querySelector(".search-bar")
+.addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
+    newYears=document.querySelector(".search-bar").value;
+  }
+});
 countdown(); 
 
 setInterval(countdown,1000);  
